@@ -1,0 +1,479 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>康宁餐具</title>
+<style type="text/css">
+body,h1,h2,h3,h4,h5,h6,p,ul,li,span,dt,dl,dd{
+	margin:0;
+	padding:0;
+}
+img{border:none;}
+a{text-decoration:none}
+ul{list-style:none;}
+.header_top{
+	height:90px;
+	background-color:rgba(0,0,0,0.5);	
+}
+.header{
+	position:fixed;
+	width:100%;	
+	z-index:2;
+}
+.header_top_inner{
+	width:1094px;
+	margin:0 auto;	
+}
+.header_top_inner .logo{
+	float:left;
+	padding:2px 0 0 7px;
+}
+.header_top_inner .font{
+	padding:14px 0 0 8px;
+}
+.header_top_inner ul{
+	float:right;
+}
+.header_top_inner li{
+	float:left;	
+	color:#bdbbbb;
+	font-size:13px;
+	padding-left:25px;
+}
+.header_top_inner a{
+	color:#bdbbbb;
+	font-size:12px;
+}
+.header_top_inner a:hover{
+	color:#fff;	
+}
+.header_bot{
+	height:34px;
+	background-color:rgba(250,0,0,0.5);
+}
+.header_bot ul{
+	width:1087px;
+	margin:0 auto;
+	height:34px;
+	padding-left:7px;
+}
+.header_bot li{
+	float:left;
+	width:129px;
+	padding-top:12px;
+	font-size:13px;	
+}
+.header_bot a{
+	color:#fff;	
+}
+.banner{
+	
+	margin:0 auto;
+	height:440px;
+	background:url(images/panzi.jpg) no-repeat center;	
+}
+.icon{
+	background:url(images/banner_bottom.jpg) repeat-x;
+	height:90px;	
+}
+.icon_inner{
+	width:1094px;
+	margin:0 auto;	
+}
+.icon_inner img{
+	height:54px;
+}
+.icon_inner a{
+	padding-top:18px;
+	display:block;
+	float:left;		
+}
+.main{
+	background:url(images/main_bg.jpg) no-repeat center top;	
+}
+.main_inner{
+	width:1094px;
+	margin: 0 auto;
+}
+.main_inner_top{
+	height:413px;	
+}
+.main_inner_top h3{
+	padding-top:40px;
+	height:65px;
+	line-height:65px;
+	color:#615e65;
+	font-size:23px;
+	font-family:"微软雅黑";
+	font-weight:normal;	
+}
+.list_pic{
+	width:202px;
+	float:left;
+	padding:0 8px;	
+}
+.list_pic .pic{
+	height:195px;
+	background:url(images/proBg.png) no-repeat center top;
+	padding:7px 0 0 7px;
+	position:relative;
+}
+
+.main_inner_top p a{
+	display:block;
+	font-size:12px;
+	font-family:"宋体";
+	color:#5f5f5f;
+	height:18px;
+	line-height:18px;
+	padding-top:9px;
+	text-align:center;
+}
+.main_inner_bot{
+	height:458px;	
+}
+.list_pic .ico{
+	position:absolute;
+	right:-8px;
+	bottom:-16px;
+}
+.new{
+	width:245px;
+	height:361px;
+	background-color:#fff;
+	margin-top:39px;
+	padding-left:15px;
+	float:left;
+	margin-right:18px;	
+}
+.main_inner_bot .last{
+	margin-right:0;	
+}
+.new h3{
+	font-size:16px;
+	color:#5c5f64;
+	font-family:"宋体";	
+	padding-top:18px;
+	font-weight:normal;
+}
+.new_pic{
+	padding-top:15px;	
+}
+.new .xinzhuyi{
+	padding-top:20px;
+	padding-bottom:18px;	
+}
+.new .xinzhuyi li{
+	font-size:13px;
+	font-family:"宋体";
+	color:#5d5d5d;
+	height:24px;
+	line-height:24px;	
+}
+.new_btn{
+	background:url(images/more.png) no-repeat ;	
+	width:111px;
+	height:36px;
+}
+.new_btn a{
+	display:block;	
+	width:90px;
+	height:27px;
+	color:#fff;
+	padding-left:10px;
+	font-family:"微软雅黑";
+	font-size:13px;
+	line-height:27px;
+}
+.main_inner_bot .xinwen{
+    padding-top: 11px;
+}
+.main_inner_bot .xinwen li{
+    line-height: 17px;
+    color: #aeafb3;
+}
+.main_inner_bot .xinwen .text{   
+    font-size:13px;
+    font-family:"宋体";
+    color: #616161;
+}
+.main_inner_bot .font{
+    width: 260px;
+    height: 110px;
+}
+.main_inner_bot dl{
+    width: 260px;
+    height: 110px;
+}
+.main_inner_bot .last dt{
+    font-size: 15px;
+    color: #606060;
+    font-family: "微软雅黑";
+    padding-top: 13px;
+}
+.main_inner_bot .last dd{
+    color: #5e5e5e;
+    font-size: 12px;
+    font-family: "宋体";
+    padding-top: 10px;
+}
+.footer{
+    height: 270px;
+    background-color: #626262;
+}
+.footer_inner{
+    width: 1094px;
+    margin: 0 auto;
+}
+.footer_inner dl{
+    width: 165px;
+    float: left;
+}
+.footer_inner .last{
+    width: 97px;
+}
+.footer_inner .frist{
+    padding-left: 7px;
+}
+.footer_inner dt{
+    color: #dcdcdc;
+    font-size: 13px;
+    font-family: "宋体";
+    font-weight: bolder;
+    line-height: 21px;
+    padding-top: 30px;
+}
+.footer_inner dd{
+    font-size: 13px;
+    font-family: "宋体";
+    color: #b1b1b1;
+    line-height: 21px;
+}
+.bottom{
+    height: 72px;
+    background-color: #292929;
+}
+.bottom_inner{
+    width: 1094px;
+    margin: 0 auto;
+}
+.bottom_inner p{
+    color: #788478;
+    color: 13px;
+    float: left;
+}
+.bottom_inner span{
+    float: right;
+    color: #808080;
+    font-size:13px;
+    font-family: "宋体";
+    padding-top: 15px;
+}
+.gotop{
+    position: absolute;
+    position: fixed;
+    z-index: 3;
+    right: 0;
+    bottom: 0;
+}
+</style>
+</head>
+
+<body>
+<div class="gotop"><a href="#"><img src="images/goToTop.png" /></a></div>
+<div class="header">
+	<div class="header_top">
+    	<div class="header_top_inner">
+        	<div class="logo"><a href="#"><img src="images/logo.png" /></a></div>
+            <div class="font">
+                <ul>
+            		<li>欢迎光临美国康宁餐具官网</li>
+                	<li><a href="#">返回首页</a></li>
+                	<li>[<a href="#">注册 </a>/ <a href="#">登录</a>]</li>
+                	<li><a href="#">康宁餐具全球官网</a></li>
+                	<li><a href="#">联系我们</a> | <a href="#">人才招聘</a></li>
+            	</ul>
+            	<div class="form"></div>    
+            </div>   
+        </div>
+    </div>
+    <div class="header_bot">
+    	<ul>
+        	<li><a href="#">百年康宁</a></li>
+            <li><a href="#">品牌专区</a></li>
+            <li><a href="#">产品中心</a></li>
+            <li><a href="#">明星产品</a></li>
+            <li><a href="#">新闻动态</a></li>
+            <li><a href="#">康宁心煮艺</a></li>
+            <li><a href="#">康宁俱乐部</a></li>
+        </ul>
+    </div>
+</div>
+<div class="banner"></div>
+<div class="icon">
+	<div class="icon_inner">
+    	<a href="#"><img src="images/link01.png" /></a>
+        <a href="#"><img src="images/link02.png" /></a>
+        <a href="#"><img src="images/link03.png" /></a>
+        <a href="#"><img src="images/link04.png" /></a>
+        <a href="#"><img src="images/link05.png" /></a>
+        <a href="#"><img src="images/link06.png" /></a>
+        <a href="#"><img src="images/link07.png" /></a>
+        <a href="#"><img src="images/link08.png" /></a>
+        <a href="#"><img src="images/link09.png" /></a>
+    </div>
+</div>
+<div class="main">
+	<div class="main_inner">
+    <div class="main_inner_top">
+    	<h3>明星产品</h3>
+        <div class="list_pic">
+        	<div class="pic"><a href="#"><img src="images/list-01.jpg" /></a>
+       	  		<div class="ico"><img src="images/campion.png" /></div>
+            </div> 
+            <p><a href="#">Visions晶彩透明锅</a></p> 
+        </div>
+        <div class="list_pic">
+        	<div class="pic"><a href="#"><img src="images/list-02.jpg" /></a>
+       	  		<div class="ico"><img src="images/campion.png" /></div>
+            </div> 
+            <p><a href="#">Swiss Diamond瑞仕钻锅</a></p> 
+        </div>
+        <div class="list_pic">
+        	<div class="pic"><a href="#"><img src="images/list-03.jpg" /></a>
+       	  		<div class="ico"><img src="images/campion.png" /></div>
+          	</div> 
+            <p><a href="#">Green Pan格林攀锅</a></p> 
+        </div>
+        <div class="list_pic">
+        	<div class="pic"><a href="#"><img src="images/list-04.jpg" /></a>
+       	  		<div class="ico"><img src="images/campion.png" /></div>
+         	</div> 
+            <p><a href="#">Pyrex百丽锅</a></p> 
+        </div>
+        <div class="list_pic">
+        	<div class="pic"><a href="#"><img src="images/list-05.jpg" /></a>
+       	  		<div class="ico"><img src="images/campion.png" /></div>
+            </div> 
+            <p><a href="#">Corningware康宁锅</a></p> 
+        </div>
+               
+    </div>
+    <div class="main_inner_bot">
+   	    <div class="new">
+        	<h3>康宁心煮艺</h3>
+            <div class="new_pic"><a href="#"><img src="images/info-01.jpg" /></a></div>
+            <ul class="xinzhuyi">
+            	<li>播出媒体：旅游卫视</li>
+                <li>首播时间：18:13-18:28（周一至周五）</li>
+                <li>重播时间：03:48—04:03、12:50—13:05</li>
+            </ul>
+            <div class="new_btn"><a href="#">了解更多</a></div>
+        </div>
+        <div class="new">
+        	<h3>新闻动态</h3>
+            <div class="new_pic"><a href="#"><img src="images/info-02.jpg" /></a></div>
+            <div class="font">
+                <ul class="xinwen">
+            	   <li>2014.12.25</li>
+                    <li class="text">瑞仕钻锅被美国权威杂志评为最佳锅具</li>
+                </ul>
+                <ul class="xinwen">
+                    <li>2013.09.27</li>
+                    <li class="text">乐享绿色厨房 GreenPan（格林攀）引领健</li>
+                </ul>
+            </div>
+            <div class="new_btn"><a href="#">了解更多</a></div>
+        </div>
+        <div class="new">
+        	<h3>活动信息</h3>
+            <div class="new_pic"><a href="#"><img src="images/info-03.jpg" /></a></div>
+            <div class="font">
+                <ul class="xinwen">
+                   <li>2013.09.27</li>
+                    <li class="text">Swiss Diamond原汁机 “大”有不同</li>
+                </ul>
+                <ul class="xinwen">
+                    <li>2014.12.22</li>
+                    <li class="text">京东辣妈厨房新风尚大促震撼开启</li>
+                </ul>
+            </div>
+            <div class="new_btn"><a href="#">了解更多</a></div>
+        </div>
+        <div class="new last">
+        	<h3>康宁俱乐部</h3>
+            <div class="new_pic"><a href="#"><img src="images/info-04.jpg" /></a></div>
+            <dl>
+            	<dt>加入康宁俱乐部专享三重惊喜</dt>
+                <dd>独家食谱</dd>
+                <dd>尊享活动</dd>
+                <dd>最新资讯</dd>
+            </dl>
+            <div class="new_btn"><a href="#">了解更多</a></div>
+        </div>
+    </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="footer_inner">
+        <dl class="frist">
+            <dt>百年康宁</dt>
+            <dd>品牌故事</dd>
+            <dd>发展历程</dd>
+            <dd>品牌理念</dd>
+        </dl>
+        <dl>
+            <dt>品牌专区</dt>
+            <dd>Corelle 康宁餐具</dd>
+            <dd>CorningWare 康宁锅</dd>
+            <dd>Swiss Diamond 瑞仕钻锅</dd>
+            <dd>Green Pan 格林攀</dd>
+            <dd>Snapware 康宁扣</dd>
+            <dd>Pyrex 百丽</dd>
+            <dd>OXO</dd>
+            <dd>World Kitchen</dd>
+        </dl>
+        <dl>
+            <dt>产品中心</dt>
+            <dd>其他</dd>
+            <dd>保鲜容器</dd>
+            <dd>炊具</dd>
+            <dd>餐具</dd>
+        </dl>
+        <dl>
+            <dt>明星产品</dt>
+            <dd>新品速递</dd>
+            <dd>热销产品</dd>
+            <dd>热销套组</dd>
+        </dl>
+        <dl>
+            <dt>新闻动态</dt>
+            <dd>活动信息</dd>
+            <dd>媒体报道</dd>
+        </dl>
+        <dl>
+            <dt>康宁心煮艺</dt>
+            <dd>节目介绍</dd>
+            <dd>明星嘉宾</dd>
+            <dd>活动预告</dd>
+            <dd>节目回顾</dd>
+            <dd>其他节目</dd>
+        </dl>
+        <dl class="last">
+            <dt>康宁俱乐部</dt>
+            <dd>注册会员</dd>
+            <dd>会员报名活动</dd>
+            <dd>烹饪课堂</dd>
+            <dd>优惠活动</dd>
+            <dd>健康菜谱</dd>
+        </dl>
+    </div>
+</div>
+<div class="bottom">
+    <div class="bottom_inner">
+        <p>Copyright © 2013 WorldKitchen, LLC. All Rights Reserved<br/>CORNINGWARE® and PYREX® are registered trademarks of Corning Incorporated used under license by World Kitchen, LLC.</p>
+        <span>隐私保护</span>
+    </div>
+</div>
+</body>
+</html>

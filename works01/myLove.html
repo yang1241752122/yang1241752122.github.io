@@ -1,0 +1,248 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/picAnimation.js"></script>
+<style>
+    body,h1,h2,h3,h4,h5,h6,p,ul,li,span,dt,dl,dd{padding: 0;margin: 0;}
+    body{background: url("images/paper.jpg")}
+    .main{box-shadow: 0 0 62px -3px rgba(0,0,0,0.75);width: 1200px; margin: 0 auto; margin-top: 90px;}
+    .title{width: 1200px;height:165px; background: #000; opacity: .7;  color: #fff; position: relative;}
+    .title .p1{font-family: 'Great Vibes', cursive; font-size: 48px; position: absolute;left: 344px;top: 40px;}
+    .title .p2{font-family: 'Great Vibes', cursive; font-size: 25px;position: absolute;left: 363px;top: 93px;}
+    .title i{font-family: 'Rochester', cursive; font-size: 100px;position: absolute;left: 540px;top: 38px;}
+    .title .p3{font-family: 'Great Vibes', cursive; font-size: 48px;position: absolute;left: 645px;top: 40px;}
+    .title .p4{font-family: 'Great Vibes', cursive; font-size: 25px;position: absolute;left: 645px;top: 93px;}
+    .banner{width:1200px;height: 655px; background: url("images/bg.jpg");background-size: cover; position: relative;}
+    .ribbon{
+        width:1250px;height: 75px; background: #b73434; background: -moz-linear-gradient(top, #d64b4b, #ab2c2c);
+        background: -ms-linear-gradient(top, #d64b4b, #ab2c2c);
+        background-image: -ms-linear-gradient(top, #d64b4b 0%, #ab2c2c 100%);
+        background: -webkit-linear-gradient(top, #d64b4b, #ab2c2c);
+        position: absolute; left: -25px; top: 0;
+    }
+    .ribbon:before{
+        content: "";
+        width: 69px;
+        height: 68px;
+        background: url("images/4.png");
+        position: absolute;
+        left:-45px;
+        top: 30px;
+        z-index: -1;
+    }
+
+    .ribbon:after{
+        content: "";
+        width: 69px;
+        height: 68px;
+        background: url("images/3.png");
+        position: absolute;
+        left:1227px;
+        top: 30px;
+        z-index: -1;
+    }
+    .xian{ margin: 2px 0; height:69px;border: 1px dashed #fff; border-left:none;border-right: none;  text-align: center;}
+    .xian p{font-size: 45px;
+        font-family: 'Rochester', cursive;
+        color: #801111;
+        text-shadow: #d65c5c 0 1px 0;
+        letter-spacing: 6px;
+    }
+    .bannerText{ position: absolute;left:0;top:100px; color: #fff;}
+    .content_one{height: 465px; background: #fff; position: relative;}
+    .content_one .text_left{width: 270px;text-align: right; position: absolute;left: 35px;top:120px; line-height: 25px; font-size: 14px;}
+    .content_one .text_right{width: 270px;text-align: left; position: absolute;right: 35px;top:120px;line-height: 25px; font-size: 14px;}
+    .content_one .border_L{padding: 10px;border: 4px double #e1698e;width: 237px;height:237px;border-radius: 50%; position: absolute;left: 315px;top:80px;}
+    .content_one .border_Y{padding: 10px;border: 4px double #e1698e;width: 237px;height:237px;border-radius: 50%; position: absolute;right: 315px;top:80px;}
+    .content_one .photo_L {width: 237px;height:237px; border-radius:50%;background-image: url("images/QQ图片20150502224918.jpg");background-size: cover;}
+    .content_one .photo_Y {width: 237px;height:237px; border-radius:50%;background-image: url("images/QQ图片20150502224918.jpg");background-size: cover;}
+    .content_one .and{background: url("images/heart.png");width: 70px;height: 60px; position: absolute;left: 566px; top:198px; }
+    .content_one .name_l{margin: 10px 0;  font-family: 'Rochester', cursive;  font-size: 34px;  letter-spacing: 4px;width: 237px; text-align: center; position: absolute;left:325px;top: 335px;}
+    .content_one .name_r{margin: 10px 0;  font-family: 'Rochester', cursive;  font-size: 34px;  letter-spacing: 4px; width: 237px;text-align: center; position: absolute;right:325px;top: 335px;}
+
+    .content_two{height: 540px;background: url("images/bg-2.jpg"); position: relative; padding: 0 10px;}
+    .content_two .time{ position: absolute;left: 415px;top: 90px; text-align: center; color: #3f3f3f;}
+    .content_two .time p{
+        font-family: 'Rochester', cursive;
+        font-size: 48px;
+        letter-spacing: 5px;
+        font-weight: 500;
+    }
+    .content_two .time h5{ margin-top: 20px; font-size: 20px;}
+    .content_two  .timeBorder{height:265px;border:1px solid #000; border-right: none;border-left:none; position: relative; top: 215px; }
+    .content_two .day .one ,.two ,.three ,.four{width: 100px;height: 130px; background: #fff; font-size: 100px;
+        line-height: 130px;text-align: center;color:#3f3f3f;}
+    .content_two .day .one{position: absolute; top: 60px; left: 140px;font-size: 100px;  line-height: 130px;}
+    .content_two .day .two {position: absolute; top: 60px; left: 245px;}
+    .content_two .day .three{position: absolute;top: 60px; left: 350px; }
+    .content_two .day .four{position: absolute; top: 60px; left: 455px;}
+
+    .content_two .hours .one ,.two ,.three ,.four{width: 100px;height: 130px; background: #fff; font-size: 100px;
+        line-height: 130px;text-align: center;color:#3f3f3f;}
+    .content_two .hours .one{position: absolute; top: 60px; right: 140px;font-size: 100px;  line-height: 130px; }
+    .content_two .hours .two {position: absolute; top: 60px; right: 245px;}
+    .content_two .hours .three{position: absolute;top: 60px; right: 350px; }
+    .content_two .hours .four{position: absolute; top: 60px; right: 455px;}
+
+    .content_three{background: #fff; position: relative; text-align: center; padding-bottom: 60px;}
+    .content_three .heard{color:#3f3f3f; padding: 30px 0 20px;text-align: center;    font-family: 'Rochester', cursive;  font-size: 48px;  letter-spacing: 5px;  font-weight: 500;}
+    .content_three .line{position: absolute; left: 46%;top: 100px; width: 80px;height: 5px; background: #444444;}
+    .content_three .text{position: absolute;left: 45%;top: 120px;}
+    .content_three .historyMain{position: relative;}
+    .content_three .historyMain:before{content:""; width: 4px;height: 99%; background: #bbb;position: absolute; left: 50%;top: 0;}
+    .content_three .pic{margin-top: 115px; position: relative;left: 0;top: 0;height: 170px;}
+    .content_three .picLeft img{width: 170px;height: 170px;border-radius: 50%; border: 6px solid #000;margin-left: 38px; float: left;}
+    .content_three .picRight img{width: 170px;height: 170px;border-radius: 50%; border: 6px solid #000;margin-right: 34px;float: right;}
+    .content_three .historyMain .picLeft .history{float:left; width: 355px; margin-left: 120px;}
+    .content_three .historyMain .picRight .history{float:right; width: 355px; margin-right: 120px;}
+    .content_three .picLeft .history .time{line-height: 20px; font-size: 20px;color: #DE5781;text-align: right;}
+    .content_three .picLeft .history .font{ line-height: 25px; font-size: 14px;color: #3F3F3F; text-align: right;}
+    .content_three .picRight .history .time{line-height: 20px; font-size: 20px;color: #DE5781;text-align: left;}
+    .content_three .picRight .history .font{ line-height: 25px; font-size: 14px;color: #3F3F3F; text-align: left;}
+    .content_three .historyMain .ending{width: 170px;height: 170px;border-radius: 50%; border: 6px solid #000; background: #000; line-height: 170px; text-align: center;
+    color:#fff; font-family: 'Rochester', cursive;  font-size: 20px; margin-left:510px; margin-top: 115px;position: relative;z-index: 1;}
+
+    .picAnimation{position: relative; list-style: none; width: 1200px;height: 675px;}
+    .picAnimation li{position: absolute;transition: transform 2s ease-out; background: #fff;}
+    .picAnimation li div{transition: transform 2s ease-out 2s; cursor: pointer;}
+
+    .ourImg{position:relative; height:265px;background: url("images/bg-2.jpg");font-family: 'Rochester', cursive;font-size: 48px;letter-spacing: 5px;font-weight: 500; color: #3f3f3f; text-align: center; line-height: 265px;}
+    .ourImg .line{position: absolute; left: 47%;top: 165px; width: 70px;height: 5px; background: #444444;}
+    .thank{text-align: center; line-height: 120px; height: 120px; background: #000; opacity: .8; color: #fff;font-family: 'Rochester', cursive;  font-size: 38px;  letter-spacing: 4px;}
+
+    .foot{height: 100px; background: #fceada; margin-bottom: 50px;}
+    .foot .left{ float:left; line-height: 24px; margin-top: 30px; font-size: 14px; width: 400px;text-align: center;}
+    .foot .right{ float:right; line-height: 24px; margin-top: 30px; font-size: 14px; width: 400px;text-align: center;}
+</style>
+<body>
+<div class="main">
+	<div class="title">
+        <p class="p1">
+            Miss Liu
+        </p>
+        <p class="p2">Sunshine</p>
+        <i>&</i>
+        <p class="p3">Mr.Yang</p>
+        <p class="p4">old Man</p>
+    </div>
+    <div class="banner">
+        <div class="ribbon">
+            <div class="xian">
+                <p>The story Of Us</p>
+            </div>
+        </div>
+        <p class="bannerText">
+
+        </p>
+    </div>
+    <div class="content_one">
+        <div class="text_left">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+        </div>
+        <div class="border_L">
+            <div class="photo_L"></div>
+        </div>
+        <div class="and"></div>
+        <div class="border_Y">
+            <div class="photo_Y"></div>
+        </div>
+        <div class="text_right">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+        </div>
+        <div class="name_l">
+            Pawpaw Story
+        </div>
+        <div class="name_r">
+            Banana Story
+        </div>
+    </div>
+    <div class="content_two">
+        <div class="time">
+            <p>Together Time</p>
+            <h5>The time we experience</h5>
+        </div>
+        <div class="timeBorder">
+            <div class="day">
+                <div class="one">0</div>
+                <div class="two">0</div>
+                <div class="three">0</div>
+                <div class="four">0</div>
+            </div>
+            <div class="hours">
+                <div class="one">0</div>
+                <div class="two">0</div>
+                <div class="three">0</div>
+                <div class="four">0</div>
+            </div>
+        </div>
+    </div>
+    <div class="content_three">
+        <div class="heard">
+            Our Story
+        </div>
+        <div class="line"></div>
+        <div class="text">texttexttexttext</div>
+        <div class="historyMain">
+
+            <!--<div class="pic picLeft">
+                <div class="history">
+                    <p class="time">
+                        2009-2011</br>First Met
+                    </p>
+                    <p class="font">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+                    </p>
+                </div>
+                <img src="images/18.jpg">
+            </div>
+
+            <div class="pic picRight">
+                <div class="history">
+                    <p class="time">
+                        2009-2011</br>First Met
+                    </p>
+                    <p class="font">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+                    </p>
+                </div>
+                <img src="images/18.jpg">
+            </div>
+
+            <div class="ending">
+                To be continued
+            </div>-->
+
+        </div>
+    </div>
+    <div class="ourImg">
+        Our Albums
+        <div class="line"></div>
+    </div>
+    <ul class="picAnimation" id="picAnimation">
+
+    </ul>
+    <div class="thank">
+        Thank You!
+    </div>
+    <div class="foot">
+        <p class="left">Copyright 2015 - More works 杨志高工作室</p>
+        <div class="logo">
+            <i></i>
+            <i></i>
+            <i></i>
+        </div>
+        <p class="right">Privacy Policy Terms of Use</p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+input[type="email"].ng-dirty.ng-invalid{
+    color:red;
+}
+
+input[type="email"].ng-dirty.ng-valid{
+    color:green;
+}

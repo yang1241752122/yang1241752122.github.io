@@ -1,0 +1,23 @@
+1、关于angularJS中表单验证：
+    内置表单级别属性：$pristine、$dirty、$valid、$invalid、$error
+    内置表单属性：
+              $pristine：代表表单的原始状态，用户从未与其交互
+              $dirty：代表表单是否已经和用户交互(是否开始操作表单了)
+              $valid: 有效的。
+              $invalid: 无效的。
+              $error: 错误信息对象，包括属性有required、type="email | date | number"等
+
+    动态受管理的验证class：ng-valid、ng-invalid、ng-pristine、ng-dirty、ng-submitted
+
+2、使用时的注意事项：
+     1) 要使用AngularJS进行表单验证，需要设置表单novalidate属性
+        novalidate属性并不是AngularJS指令，它是一个标准的HTML属性，被用来阻止内置的浏览器验证。
+        当我们想要让AngularJS来验证表单时，使用它。
+     2) 添加验证规则:required type=[number]等
+     3) 必须进行ng-model绑定
+
+3、在AngularJS中，和服务器端进行网络通信，一般有两种方法：
+  1）使用$http service：更加低级的网络交互方式，类似于jquery的ajax请求。
+  2）使用$resouce service：更加高级抽象的网络交互方式。
+
+  headers: {'Content-Type': 'application/x-www-form-urlencoded'}

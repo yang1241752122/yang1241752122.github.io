@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+
+@media screen and (max-width:980px){
+	.wrap{width:96%;}	
+	.main_right{width:20%;}
+	article{width:61%;}
+	article img{width:100%;}
+}
+
+@media screen and (max-width:640px){
+	.main_right{width:auto; float:none;}
+	article{float:none; padding:0 3%;}
+	nav form input{position:absolute;top:-50px;right:0; width:10%;}
+	nav form input:focus{width:13%;}
+}
