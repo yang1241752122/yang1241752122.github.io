@@ -1,1 +1,195 @@
-yangzhigao
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>index</title>
+<link href="css/index.css" rel="stylesheet" type="text/css">
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="js/JQ.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script	src="js/jquery.smint.js" type="text/javascript" ></script>
+<script src="js/jquery.nav.js" type="text/javascript"></script>
+<script src="js/jquery.fancybox.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var $liCur = $(".menu ul li.cur"),
+		  curP = $liCur.position().left,
+		  curW = $liCur.outerWidth(true),
+		  $slider = $(".curBg"),
+		  $navBox = $(".menu");
+		 $targetEle = $(".menu ul li a"),
+		$slider.animate({
+		  "left":curP,
+		  "width":curW
+		});
+		$targetEle.mouseenter(function () {
+		  var $_parent = $(this).parent(),
+			_width = $_parent.outerWidth(true),
+			posL = $_parent.position().left;
+		  $slider.stop(true, true).animate({
+			"left":posL,
+			"width":_width
+		  }, "fast");
+		});
+		$navBox.mouseleave(function (cur, wid) {
+		  cur = curP;
+		  wid = curW;
+		  $slider.stop(true, true).animate({
+			"left":cur,
+			"width":wid
+		  }, "fast");
+		});	
+	$(window).scroll(function(){
+		if($(window).scrollTop()>800){
+			$('nav').css('background-color','rgba(0,0,0,0.5)')
+			}
+			else{
+			$('nav').css('background-color','rgba(0,0,0,0)')
+				}
+		})
+	$('.menu').onePageNav();
+	$('.fancybox').fancybox(); 
+   $(".goTopBtn").click(function(){  
+            $('body,html').animate({scrollTop:0},1000);  
+                return false;  
+            }); 
+		
+})
+</script>
+
+
+</head>
+
+<body>
+<!--导航-->
+<nav>
+	<div class="inner">
+    	<div class="logo">YangZhiGao</div>
+        <div class="menu">
+        	<ul>
+                <li class="cur"><a href="#section-1" >HOME</a></li>
+                <li><a href="#section-2" >ABOUT</a></li>
+                <li><a href="#section-3" >SKILL</a></li>
+                <li><a href="#section-4" >WORKS</a></li>
+                <li><a href="#section-5" >CONTACT</a></li>
+   			</ul> 
+  			<div class="curBg"></div>
+    		<div class="cls"></div>
+        </div>
+    </div>
+</nav>
+
+
+<!--首屏-->
+<section id="section-1" class="section-wrapper">
+	<div class="inner">
+        <div class="home_txt">
+            <h1>Web前端工程师</h1>
+            <p>专注、严谨、追求完美</p>
+        </div>
+        <div class="down"><a href="#section-2"></a></div>
+    </div>
+</section>
+
+<!--关于我-->
+<section id="section-2" class="section-wrapper">
+	<div class="inner about_inner">
+	  <div class="about_top">
+        	<h2>ABOUT</h2>
+            <h3>关于 <i class="fa fa-circle"></i> 我</h3>
+            <div class="tx"><img src="images/touxiang.jpg"/></div>
+        </div>
+
+        	<div class="left_top">
+            	<div class="cont"><i class="fa fa-user"></i><p>杨志高</p><div class="cls"></div></div>
+                <div class="cont"><i class="fa fa-calendar"></i><p>1994.11.04</p><div class="cls"></div></div>
+                <div class="cont"><i class="fa fa-map-marker"></i><p>深 圳</p><div class="cls"></div></div>
+            </div>
+           <div class="left_bot">
+            	<h3>2015年-2016年</h3>
+                <p>2015年10月参加工作,就职于广州中长康达工程中心部.</p>
+               <p>项目经验:负责公司旗下的伯乐咖啡在线点餐项目中商品展示和购物车模块、参与公司内部员工系统人员部门表，个人信息表操作管理模块</p>
+            </div>
+
+
+        	<div class="right_top">
+            	<div class="cont"><i class="fa fa-phone"></i><p>18819003334</p><div class="cls"></div></div>
+                <div class="cont"><i class="fa fa-envelope-o"></i><p>1241752122@qq.com</p><div class="cls"></div></div>
+            </div>
+            <div class="right_bot1 right_bot">
+            	<h3>2016年</h3>
+                <p>毕业于广州城建职业学院<br>
+软件工程专业</p>
+            </div>
+
+
+    </div>
+</section>
+<!--我的技能-->
+<section id="section-3" class="section-wrapper">
+	<div class="inner">
+          <div class="about_top">
+                <h2>SKILL</h2>
+                <h3>我的技能</h3>
+           </div>
+          <div class="mySkills">
+              html,css网页重构（h5,css3）,能快速准确重构设计稿的页面，有响应试开发经验。</br>
+              熟练使用原生javasrcipt，实现页面交互效果。</br>
+              熟练使用jquery框架和ajax实现页面交互。熟悉bootstrap框架。</br>
+              熟练试用angularJs框架处理调用数据和实现交互。</br>
+              熟练使用ionic编写web App轻应用。</br>
+          </div>
+    </div>
+</section>
+
+<!--我的作品-->
+<section id="section-4" class="section-wrapper">
+	<div class="inner">
+    	<div class="about_top">
+        	<h2>WORKS</h2>
+            <h3>在校作品</h3>
+        </div>
+        <ul class="clear worksUl">
+            <li class="works01"><a href="works01/myLove.html"><img src="images/作品1.png"></a></li>
+            <li class="works01"><a href="works02/index.html"><img src="images/作品02.png"></a></li>
+            <li class="works01"><a href="works03/index.html"><img src="images/作品03.png"></a></li>
+            <li class="works01"><a href="works04/index.html"><img src="images/作品04.png"></a></li>
+            <li class="works01"><a href="works05/index.html"><img src="images/作品05.png"></a></li>
+            <li class="works01"><a href="works06/index.html"><img src="images/作品06.png"></a></li>
+            <li class="works01"><a href="works03/details.html"><img src="images/作品07.png"></a></li>
+            <li class="works01"><a href="works08/index.html"><img src="images/作品08.png"></a></li>
+        </ul>
+   </div>
+</section>
+
+<!--联系我-->
+<section id="section-5" class="section-wrapper">
+	<div class="inner">
+    	<div class="about_top">
+        	<h2>CONTACT</h2>
+            <h3>联系 <i class="fa fa-circle"></i> 我</h3>
+        </div>
+        <div class="contact">
+        	<div class="weixin_pic"><img src="images/weixin.jpg"/></div>
+            <p>【如果您对我感兴趣，请联系我】</p>
+            <div class="cont"><i class="fa fa-phone"></i><p>189-2647-5930</p><div class="cls"></div></div>
+            <div class="cont"><i class="fa fa-envelope-o"></i><p>1241752122@qq.com</p><div class="cls"></div></div>
+            <div class="goTopBtn"><a href="#"><i class="fa fa-arrow-circle-up"></i></a></div>
+        </div>
+      
+    </div>
+</section>
+<!--底部-->
+<footer>
+	<div class="innner">
+    	<div class="copy">
+        	<p>Copyright&nbsp;&nbsp;&nbsp;&nbsp;2015&nbsp;&nbsp;&nbsp;&nbsp;All rights Reserved.&nbsp;&nbsp;&nbsp;&nbsp;版权所有&nbsp;&nbsp;&nbsp;&nbsp;<span>杨志高技术支持</span></p>
+            <p>地址：深圳市龙岗区布吉莲花路莲花北巷20号&nbsp;&nbsp;&nbsp;&nbsp;联系电话：189-2647-5930&nbsp;&nbsp;&nbsp;&nbsp;粤ICP备123456号</p>
+        </div>
+    </div>
+
+</footer>
+
+</body>
+</html>
