@@ -2,340 +2,394 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>无标题文档</title>
+<title>详情页</title>
+<link href="css/style_product.css" rel="stylesheet" type="text/css">
+<script src="js/hxsd_tools.js"></script>
+<script src="js/widget.js"></script>
+<script src="js/product.js"></script>
 </head>
-<link href="css/style.css" rel="stylesheet" type="text/css">
-<script src="js/jquery-3.1.0.min.js"></script>
-<style>
-.main_one{height:597px;background:#f2f2f2;}
-.main_one .inner{width:1210px;margin:0 auto;}
-.main_one .inner .top ul{height:45px; padding-left:5px;}
-.main_one .inner .top li{float:left; line-height:45px;}
-.main_one .inner .bottom{height:550px; background:#fff; position:relative;}
-.main_one .inner .bottom .left{width:370px;float:left;}
-.main_one .inner .bottom .left .images{position:relative;}
-.main_one .inner .bottom .left .images img{margin:10px; }
-.main_one .inner .bottom .left #show_big{width:150px;height:80px;background:#57B8FF; opacity:0.4; position:absolute;left:0;top:0; cursor:move; display:none; }
-.main_one .inner .bottom .left  .big_goodsImg{width:400px;height:380px; overflow:hidden; position:absolute;left:370px;top:0px; z-index:1;display:none;}
-.main_one .inner .bottom .left  .big_goodsImg img{width:1050px; position:absolute;}
-.main_one .inner .bottom .left .nav {font-size:0;}
-.main_one .inner .bottom .left .nav img{margin:0 5px;border:2px solid #fff;}
-.main_one .inner .bottom .left .nav img:hover{border:2px solid red;}
-.main_one .inner .bottom .left .nav .back{height:45px; width:13px; cursor:pointer; float:left; background:url(images/newicon20140910.png) no-repeat 0 -350px; margin-left:22px; }
-.main_one .inner .bottom .left .nav .next{height:45px;width:13px; cursor:pointer; float:right;background:url(images/newicon20140910.png) no-repeat -14px -350px;}
-.main_one .inner .bottom .left .font p{float:left;margin-left:34px; margin-top:25px;}
-.main_one .inner .bottom .left .font .fenxiang{ position:relative; margin-top:25px;margin-left:70px; display:inline-block;}
-.main_one .inner .bottom .left .font .share{width:14px;height:12px; position:absolute;left:-95px;top:-20px; background:url(images/newicon20140910.png) no-repeat -160px -296px;margin-top:25px; margin-left:78px;}
-.main_one .inner .bottom .left .font .guanzhu{ position:relative; margin-top:25px;margin-left:18px; display:inline-block;}
-.main_one .inner .bottom .left .font .collect{width:14px;height:12px; background:url(images/newicon20140910.png) no-repeat -177px -296px; position:absolute;left:-17px;top:5px;}
-.main_one .inner .bottom .mid{width:620px; float:left;}
-.main_one .inner .bottom .mid h3{line-height:23px;color:#666; font-size:17px; margin-top:14px;}
-.main_one .inner .bottom .mid .money{width:588px;height:50px;background:#f7f7f7; margin:13px 0 0 8px; line-height:50px;}
-.main_one .inner .bottom .mid .money .money_left{float:left;}
-.main_one .inner .bottom .mid .money .money_right{float:right; border-left:1px solid #e6e6e6; height:34px; line-height:18px; margin-top:10px; font-size:12px; margin-right:16px;}
-.main_one .inner .bottom .mid .address{margin:13px 0 0 8px; border-bottom:1px dotted #ddd; width:588px;}
-.main_one .inner .bottom .mid .address select{height:25px;}
-.main_one .inner .bottom .mid .address p{font-size:12px; line-height:35px;}
-.main_one .inner .bottom .mid .species{margin-left:20px; padding-top:17px;}
-.main_one .inner .bottom .mid .species img{float:left;}
-.main_one .inner .bottom .mid .species i{border:1px solid #ccc; height:29px; display:inline-block; line-height:29px; font-size:14px; padding-left:2px;padding-right:5px; margin-left:8px; margin-bottom:4px; font-size:12px;}
-.main_one .inner .bottom .mid .species #banma{margin-left:88px;}
-.main_one .inner .bottom .mid .species i:hover{border:1px solid red;}
-.main_one .inner .bottom .mid .security{position:relative; margin-top:8px;margin-left:20px;}
-.main_one .inner .bottom .mid .security select{height:25px; text-indent:2em; font-size:12px; width:130px; margin-left:8px;}
-.main_one .inner .bottom .mid .security .exchange{width:16px;height:16px;background:url(images/567cb057N77e247ca.png) no-repeat;display:inline-block;position:absolute;left:93px;top:5px;}
-.main_one .inner .bottom .mid .security .query{width:16px;height:16px; background:url(images/newicon20140910.png) no-repeat -133px -293px; display:inline-block; position:absolute;left:225px;top:5px;}
-.main_one .inner .bottom .mid .ious{margin-top:12px; margin-left:20px;}
-.main_one .inner .bottom .mid .ious i{border:1px solid #ccc; font-size:14px; padding:0 6px;height:26px; display:inline-block;line-height:26px;}
-.main_one .inner .bottom .mid .ious i:hover{border:1px solid red; height:26px;}
-.main_one .inner .bottom .mid .ious .query{width:16px;height:16px; background:url(images/newicon20140910.png) no-repeat -133px -293px;display:inline-block;}
-.main_one .inner .bottom .mid .ious .hui{width:16px;height:16px;display:inline-block;}
-.main_one .inner .bottom .mid .buy {height:70px;}
-.main_one .inner .bottom .mid .buy .much {border:1px solid #ccc; width:50px; height:35px; position:relative; margin-left:20px; margin-top:25px; float:left;}
-.main_one .inner .bottom .mid .buy .much .up{width:15px;height:17px;border-left:1px solid #ccc;border-bottom:1px solid #ccc;position:absolute;right:0;top:0; text-align:center;line-height:17px;cursor:pointer; background:#f1f1f1;}
-.main_one .inner .bottom .mid .buy .much .down{width:15px;height:17px;border-left:1px solid #ccc;position:absolute;right:0;bottom:0;text-align:center;line-height:17px;cursor:pointer; background:#f1f1f1;}
-.main_one .inner .bottom .mid .buy .much input{width:33px; height:35px; text-align:center;line-height:33px;}
-.main_one .inner .bottom .mid .buy .car{width:99px;height:35px; background:#e03336; border-radius:3px; float:left; margin-top:25px; margin-left:10px; line-height:35px; color:#fff; padding-left:36px; position:relative; font-size:18px;font-weight:bolder;}
-.main_one .inner .bottom .mid .buy .car img{position:absolute;left:10px; top:10px;}
-.main_one .inner .bottom .mid .buy .one_buy{width:63px;height:36px;background:#84c360;float:left;margin-top:25px; margin-left:10px; line-height:35px;  font-size:18px;font-weight:bolder; color:#fff; padding-left:10px;}
-.main_one .inner .bottom .mid .prompt{font-size:12px;color:#666; margin-top:20px;margin-left:20px;}
-.main_one .inner .bottom .right{float:left;}
-.main_one .inner .bottom .right .logo{width:180px;height:65px; margin-top:20px; border-bottom:1px dotted #eee;border-top:1px dotted #eee; padding-top:15px; padding-left:20px;}
-.main_one .inner .bottom .right .name{width:200px;height:52px;}
-.main_one .inner .bottom .right .name .shop{float:left; color:#005aa0; font-size:12px;padding-top:20px; }
-.main_one .inner .bottom .right .name .ziying{float:right; width:54px; height:18px; background:#e4393c; font-size:12px; text-align:center; color:#fff; line-height:18px; margin-top:17px; border-radius:3px;}
-.main_one .inner .bottom .right .zixun{position:relative;font-size:12px; border:1px solid #cdcdcd;height:28px; width:57px; line-height:28px; color:#666; padding-left:33px; margin-bottom:12px;}
-.main_one .inner .bottom .right .zixun i{width:17px; height:17px; background:url(images/popScore.png) no-repeat -130px -1px; display:inline-block; position:absolute;top:5px;left:10px;}
-.main_one .inner .bottom .right .consulting .jindianGuangguang{position:relative;font-size:12px; border:1px solid #cdcdcd;height:28px; width:57px; line-height:28px; color:#666; padding-left:33px; float:left;}
-.main_one .inner .bottom .right .consulting .jindianGuangguang i{width:17px; height:17px; background:url(images/popScore.png) no-repeat -103px -1px; display:inline-block; position:absolute;top:5px;left:10px; }
-.main_one .inner .bottom .right .consulting  .guanzhuDianpu{position:relative;font-size:12px; border:1px solid #cdcdcd;height:28px; width:57px; line-height:28px; color:#666; padding-left:33px;float:left; margin-left:7px;}
-.main_one .inner .bottom .right .consulting  .guanzhuDianpu i{width:17px; height:17px; background:url(images/popScore.png) no-repeat -78px -1px; display:inline-block; position:absolute;top:5px;left:10px; }
-.main_one .inner .bottom .right .fuwuZhici p{color:#666; margin-top:16px;line-height:26px;height:26px;font-size:12px; padding-left:7px;}
-.main_one .inner .bottom .right .fuwuZhici .xianshida {color:#6a77b6; float:left;height:28px;line-height:28px; position:relative; padding-left:27px;font-size:12px;}	
-.main_one .inner .bottom .right .fuwuZhici .xianshida img{position:absolute; left:7px;top:6px;}
-.main_one .inner .bottom .right .fuwuZhici .ziti {color:#6a77b6; float:left;height:28px;line-height:28px; padding-left:50px; position:relative; font-size:12px;}
-.main_one .inner .bottom .right .fuwuZhici .ziti img{position:absolute;left:30px; top:6px;}
-</style>
-<script src="js/details.js"></script>
+
 <body>
 <div class="top">
 	<div class="inner">
-    	<div class="left">送至：北京<i>◇</i></div>
-        <ul>
-        	<li><a href="#">你好，请登录</a></li>
-            <li><a href="#">免费注册</a></li>
+		<div class="map"><a href="#">送至：北京<i>◇</i></a></div>
+    	<ul>
+    		<li><a class="word" href="#">13552845677</a> <a class="out" href="#">退出</a></li>
             <li class="line"></li>
-             <li><a href="#">我的订单</a></li>
+    		<li><a class="word" href="#">我的订单</a></li>
             <li class="line"></li>
-             <li class="bai"><a href="#">我的京东<i>◇</i></a></li>
+    		<li class="white"><a class="word" href="#">我的京东<i>◇</i></a></li>
             <li class="line"></li>
-             <li><a href="#">京东会员</a></li>
+    		<li><a class="word" href="#">京东会员</a></li>
             <li class="line"></li>
-             <li><a href="#">企业采购</a></li>
+    		<li><a class="word" href="#">企业采购</a></li>
             <li class="line"></li>
-             <li class="bai"><a href="#">手机京东<i>◇</i></a></li>
+    		<li class="white"><a class="word" href="#"><span></span>手机京东<i>◇</i></a></li>
             <li class="line"></li>
-             <li class="bai"><a href="#">关注京东<i>◇</i></a></li>
+            <li class="white"><a class="last" href="#">关注京东<i>◇</i></a></li>
             <li class="line"></li>
-             <li class="bai"><a href="#">客户服务<i>◇</i></a></li>
+            <li class="white"><a class="last" href="#">客户服务<i>◇</i></a></li>
             <li class="line"></li>
-             <li class="bai"><a href="#">网站导航<i>◇</i></a></li>
-            <li class="line"></li>
+            <li class="white"><a class="last" href="#">网站导航<i>◇</i></a></li>
+
         </ul>
     </div>
 </div>
 <div class="header">
-	<div class="inner clear">
+  <div class="header_t clear">
     	<div class="logo"><a href="#"><img src="images/logo-201305.png"></a></div>
-        <form>
-        	<input type="text" value="智能儿童手表" class="text">
-            <input type="submit" value="搜索" class="sub"> 
-             <div class="form_bot">
-                  <a href="#">开学季</a>
-                  <a href="#">1元抢宝</a>
-                  <a href="#">农用物资</a>
-                  <a href="#">300减150</a>
-                  <a href="#">199减100</a>
-                  <a href="#">书皮</a>
-                  <a href="#">阿迪达斯</a>
-                  <a href="#">1元尊享</a>
-                  <a href="#">电池</a>
-        	</div>
-        </form>
-        <div class="car"><a href="#">我的购物车</a><i>0</i></div>
-    </div>
-    <div class="bot clear">
-    	<div class="leibie">全部商品分类</div>
-        <ul class="nav">
+        <div class="search">
+        	<form>
+            	<input type="text" class="text" placeholder="闪购特卖"><input type="submit" class="sub" value="搜索">
+            </form>
+            <div class="tags">
+            	<a class="frist" href="#">玩转3C</a>
+            	<a href="#">平板99秒</a>
+            	<a href="#">1分钱抢</a>
+            	<a href="#">荣耀V8</a>
+            	<a href="#">直降618元</a>
+            	<a href="#">六一儿童节</a>
+            	<a href="#">吉利</a>
+            	<a href="#">免费试用</a>
+            	<a href="#">围城</a>
+            </div>
+        </div> 
+        <div class="buy">       
+        	<a href="#">我的购物车<i>></i></a>
+            <div class="num">0</div>
+        </div>
+	</div>
+    <div class="header_b clear">
+    	<div class="left"><a href="#">全部商品分类</a></div>
+    	<ul>
         	<li><a href="#">服装城</a></li>
-           	<li><a href="#">美妆馆</a></li>
-            <li><a href="#">京东超市</a></li>
-            <li><a href="#">生鲜</a></li>
-            <li><a href="#">全球购</a></li>
-            <li><a href="#">闪购</a></li>
-            <li><a href="#">团购</a></li>
-            <li><a href="#">拍卖</a></li>
-            <li><a href="#">金融</a></li>
+        	<li><a href="#">美妆馆</a></li>
+        	<li><a href="#">超市</a></li>
+        	<li><a href="#">生鲜</a></li>
+        	<li><a href="#">全球购</a></li>
+        	<li><a href="#">闪购</a></li>
+        	<li><a href="#">团购</a></li>
+        	<li><a href="#">拍卖</a></li>
+        	<li><a href="#">金融</a></li>
         </ul>
     </div>
 </div>
-<div class="main_one" id="main_one">
-	<div class="inner">
-    	<div class="top">
-        	<ul>
-            	<li>玩具乐器<i>></i></li>
-                <li>玩具乐器<i>></i></li>
-                <li>玩具乐器<i>></i></li>
-                <li>玩具乐器<i>></i></li>
-                <li>玩具乐器<i>></i></li>
-            </ul>
-        </div>
-        <div class="bottom" id="bottom">
+<div class="main">
+	<div class="main_inner">
+        <h3>
+            电脑、办公<i>></i><a href="#">电脑配件</a><i>></i><a href="#">显卡</a><i>></i><a href="#">技嘉（GIGABYTE）</a><i>></i><a href="#">技嘉GV-N1080G1 GAMING-8GD</a>
+        </h3>
+        <div class="product">
         	<div class="left">
-            	<div class="images" id="goods_images">
-                	<img src="images/京东内页_03.jpg">
-                    <span id="show_big"></span>
+            	<div id="box">
+                    <ul class="big_pic" id="big_pic">
+                        <li class="ac show_pic"><a href="#"><img src="images/bp1.jpg"></a><span></span></li>
+                        <li class="show_pic"><a href="#"><img src="images/bp2.jpg"></a><span></span></li>
+                        <li class="show_pic"><a href="#"><img src="images/bp3.jpg"></a><span></span></li>
+                        <li class="show_pic"><a href="#"><img src="images/bp4.jpg"></a><span></span></li>
+                        <li class="show_pic"><a href="#"><img src="images/bp5.jpg"></a><span></span></li>
+                    </ul>
                 </div>
-                <div class="big_goodsImg" id="big_goodsImg">
-                	<img src="images/京东内页_03.jpg" id="bigImg">
+                <ul id="bigb">
+                	<li><img src="images/vbp1.jpg"></li>
+                	<li><img src="images/vbp2.jpg"></li>
+                	<li><img src="images/vbp3.jpg"></li>
+                	<li><img src="images/vbp4.jpg"></li>
+                	<li><img src="images/vbp5.jpg"></li>
+                </ul>
+                <div class="pic_list">
+                	<a href="#" class="l_arrow"></a>
+                    <ul class="bot_pic" id="bot_pic">
+                        <li class="ac show_pic"><img src="images/sp1.jpg"></li>
+                        <li><img src="images/sp2.jpg"></li>
+                        <li><img src="images/sp3.jpg"></li>
+                        <li><img src="images/sp4.jpg"></li>
+                        <li><img src="images/sp5.jpg"></li>
+                    </ul>
+                    <a href="#" class="r_arrow"></a>
                 </div>
-                <div class="nav" id="goods_nav">
-                	<div class="back"></div>
-                        <img src="images/小图1.jpg">
-                        <img src="images/小图2.jpg">
-                        <img src="images/小图3.jpg">
-                        <img src="images/小图4.jpg">
-                        <img src="images/小图5.jpg">
-                    <div class="next"></div>
-                </div>
-                <div class="font">
-                	<p>商品编号：1044066</p>
-                    <span class="fenxiang"><i class="share"></i>分享</span>
-                    <span class="guanzhu"><i class="collect"></i>关注商品</span>
+                <div class="note">
+                	<div class="num">商品编号：<span>695851</span></div>
+                    <ul class="note_r">
+                        <li class="share"><a href="#">分享</a></li>
+                        <li class="focus"><a href="#">关注商品</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="mid">
-            	<h3>【京东超市】费雪（Fisher Price） 多功能早教启智玩具 声光狮子手推</br>车学步车Y9854</h3>
-                <div class="money">
-                	<p class="money_left">京 东 价：￥165(降价通知)</p>
-                    <p class="money_right">累计评价</br>10535</p>
+            	<div class="title">技嘉（GIGABYTE） GTX1080 G1 GAMING 1695-1835MHz/10010MHz 8G/256bit GDDR5X显卡</div>
+                <p>高能电竞卡来袭!G1信仰加成!复合式热管+合金电感助力Pascal核心,低功耗,高性能!</p>
+                <div class="price">
+                	<span>京 东 价：</span>¥4999.00<a href="#">(降价通知)</a>
+                    <div class="comment">
+                    	<h6>累计评价</h6>
+                        <a href="#">210</a>
+                    </div>
                 </div>
-                <div class="address">
-                	<p>配 送 至：
-                    	<select><option>广东深圳市南山区</option></select>
-                        有货，支持 99元免运费|货到付款
-                    </p>
-                    <p>服务：由京东 发货，并提供售后服务。23:00前完成下单,预计明天(10月01日)送达</p>
+                <div class="send">
+                	<div class="dt">配 送 至：</div>
+                    <div class="add_list" id="add"><i>北京朝阳区三环以内</i><b></b></div>
+                    <div id="detail"><img src="images/detail.png"><span>x</span></div>
+                    <strong>有货</strong>，支持
+                    <a href="#">99元免运费</a><span>|</span><a href="#">货到付款</a>
                 </div>
-                <div class="species" id="species">
-                	选择颜色：<i > <img src="images/55486570N2fbbb3f0.jpg">步行老虎车</i>
-                    <i><img src="images/54acab2fN422b88ab.jpg">皮皮踏行车</i>
-                    <i> <img src="images/57889491N2c9947b1.jpg">声光狮子学步车</i>
-                    <i><img src="images/54dd4a3fNe920b998.jpg">小象学步车</i>
-                    <i id="banma"><img src="images/54aca79cNe372d6ae.jpg">斑马学步车</i>
-                    <i><img src="images/56fe46a5Nf9cc746f.jpg">狮子学步车</i>
-                    <i><img src="images/54aca79cNe372d6ae.jpg">声光摇摇长颈鹿</i>
+                <div class="service">
+                	<div class="dt">服　　务：</div>
+                    <div class="text">由 京东 发货，并提供售后服务。15:00前完成下单,可预约今晚送达</div>
                 </div>
-                <div class="security">
-                	增值保障：<select><option>京东换新 ￥4.9</option></select>
-                    <i class="exchange"></i>
-                    <i class="query"></i>
-                </div>
-                <div class="ious" id="ious">
-                	白条分期：
-                    <i>30天免息</i>
-                    <i>￥55x3期</i>
-                    <i>￥28.33x6期</i>
-                    <i>￥14.58x12期</i>
-                    <i>￥7.7x24期</i>
-                    <span class="query"></span>
-                    <span class="hui"><img src="images/56336130N97219d11.png"></span>
+                <div class="size">
+                	<div class="dt">选择型号：</div>
+                    <ul class="clear" id="size">
+                    	<li><a href="javascript:;">1080尊享XTREME-1898MHz</a><b></b></li>
+                    	<li><a href="javascript:;">1080旗舰XTREME-1898MHz</a><b></b></li>
+                    	<li class="ac"><a href="javascript:;">1080热销G1-1835MHz</a><b></b></li>
+                    	<li><a href="javascript:;">1070旗舰XTREME-1873MHz</a><b></b></li>
+                    	<li><a href="javascript:;">1070专供G1-1771MHz</a><b></b></li>
+                    	<li><a href="javascript:;">1070热销G1-1784MHz</a><b></b></li>
+                    	<li><a href="javascript:;">1070小钢炮IXOC</a><b></b></li>
+                    	<li><a href="javascript:;">1060旗舰XTREME-6G</a><b></b></li>
+                    </ul>
                 </div>
                 <div class="buy">
-                	<div class="much">
-                    	<input type="text" id="goodsCount" value="1">
-                        <div class="up" id="goodsUp">+</div>
-                        <div class="down" id="goodsDown">-</div>
+                	<div class="count" id="count">
+                    	<input type="text" value="1">
+                        <a href="javascript:;" class="plus">+</a>
+                        <a href="javascript:;" class="minus">-</a>
                     </div>
-                    <div class="car"><img src="images/shopp_07.jpg"> 加入购物车</div>
-                    <div class="one_buy">一键购</div>
+                	<a class="btn" href="#"></a>
                 </div>
-                <div class="prompt">温馨提示：本商品不能使用东券支持7天无理由退货</div>
+                <div class="notice">
+                	<div class="dt">温馨提示：</div>
+                    <div class="text">1.　本商品不能使用 东券 京券　2.　支持7天无理由退货</div>
+                </div>
             </div>
             <div class="right">
-            	<div class="logo"><img src="images/logo_03.jpg"></div>
-                <div class="name clear">
-                	<p class="shop">费雪官方旗舰店</p>
-                    <p class="ziying">京东自营</p>
-                </div>
-                <div class="consulting clear">
-                	<div class="zixun">
-                    	<i></i>
-                        咨询JIMI
-                    </div>
-                    <div class="jindianGuangguang">
-                    	<i></i>
-                        进店逛逛
-                    </div>
-                    <div class="guanzhuDianpu">
-                    	<i></i>
-                        关注店铺
-                    </div>
-                </div>
-                <div class="fuwuZhici clear">
-                	<p>服务支持</p>
-                    <div class="xianshida">
-                    	<img src="images/zhongbiao.png">
-                        211限时达
-                    </div>
-                    <div class="ziti">
-                    	<img src="images/shoutixiang.png">
-                       自提
-                    </div>
+            	<div class="logo"><a href="#"><img src="images/GIGA.png"></a></div>
+            	<div class="seller clear"><a href="#">技嘉官方旗舰店</a><span>京东自营</span></div>
+                <ul>
+                	<li class="one"><a href="#"><i></i>联系供应商</a></li>
+                	<li class="two"><a href="#"><i></i>资讯JIMI</a></li>
+                	<li class="three"><a href="#"><i></i>进店逛逛</a></li>
+                	<li class="four"><a href="#"><i></i>关注店铺</a></li>
+                </ul>
+                <div class="sup">
+                	服务支持：<br>
+					<a href="#"><img src="images/text_03.jpg"></a>
                 </div>
             </div>
+            
         </div>
     </div>
+</div>
+<div class="section">
+	<div class="nav" id="nav">
+    	<ul>
+        	<li><a href="javascript:;">推荐配件</a></li>
+        	<li><a href="javascript:;">最佳组合</a></li>
+        </ul>
+    </div>
+    <div id="main">
+        <div class="page1 page">
+            <a href="javascript:;"><img src="images/page1_07.jpg"></a>
+        </div>
+        <div class="page2 page">
+            <ul>
+                <li>
+                    <div class="pic"><a href="javascript:;"><img src="images/lp1.jpg"></a></div>
+                    <p><a href="javascript:;">美商海盗船（USCorsair）SPEC-ALPHA 黑红</a></p>
+                    <span>¥499.00</span>
+                </li>
+                <li>
+                    <div class="pic"><a href="javascript:;"><img src="images/lp2.jpg"></a></div>
+                    <p><a href="javascript:;">Tt（Thermaltake）Riing 12cm RGB 机箱风扇（LED RGB 256色 导光圈/三风扇/液压轴承/强化减震系统）</a></p>
+                    <span>¥359.00</span>
+                </li>
+                <li>
+                    <div class="pic"><a href="javascript:;"><img src="images/lp3.jpg"></a></div>
+                    <p><a href="javascript:;">芝奇(G.Skill) Ripjaws 4系列 DDR4 2400频率 8G 台式机内存 (宾利黑)</a></p>
+                    <span>¥259.00</span>
+                </li>
+                <li>
+                    <div class="pic"><a href="javascript:;"><img src="images/lp4.jpg"></a></div>
+                    <p><a href="javascript:;">鑫谷（Segotep）额定600W GP700G黑金版电源（金牌认证/90+转换效率/宽幅输入/背线/智能温控风扇）</a></p>
+                    <span>¥329.00</span>
+                </li>
+                <li>
+                    <div class="pic"><a href="javascript:;"><img src="images/lp5.jpg"></a></div>
+                    <p><a href="javascript:;">先马（SAMA）方舟 电竞电脑机箱(ATX-III结构/配5把RGB风扇/宽大五金/七彩灯光/U3/调速器/读卡器)</a></p>
+                    <span>¥499.00</span>
+                </li>
+                <li>
+                    <div class="pic"><a href="javascript:;"><img src="images/lp6.jpg"></a></div>
+                    <p><a href="javascript:;">九州风神（DEEPCOOL）大霜塔 CPU散热器 双12CM风扇 6热管 全平台 标准版</a></p>
+                    <span>¥259.00</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="advan">
+	<ul>
+    	<li class="duo"></li>
+    	<li class="kuai"></li>
+    	<li class="hao"></li>
+    	<li class="sheng"></li>
+    </ul>
 </div>
 <div class="footer">
-	<div class="shang">
-    	<dl>
-        	<dt><a href="">购物指南</a></dt>
-            <dd><a href="">购物流程</a></dd>
-            <dd><a href="">会员介绍</a></dd>
-            <dd><a href="">生活旅行/团购</a></dd>
-            <dd><a href="">常见问题</a></dd>
-            <dd><a href="">大家电</a></dd>
-            <dd><a href="">联系客服</a></dd>
-        </dl>
-        <dl>
-        	<dt><a href="">配送方式</a></dt>
-            <dd><a href="">购物流程</a></dd>
-            <dd><a href="">会员介绍</a></dd>
-            <dd><a href="">生活旅行/团购</a></dd>
-            <dd><a href="">常见问题</a></dd>
-            <dd><a href="">大家电</a></dd>
-        </dl>
-        <dl>
-        	<dt><a href="">支付方式</a></dt>
-            <dd><a href="">购物流程</a></dd>
-            <dd><a href="">会员介绍</a></dd>
-            <dd><a href="">生活旅行/团购</a></dd>
-            <dd><a href="">常见问题</a></dd>
-            <dd><a href="">大家电</a></dd>
-        </dl>
-        <dl>
-        	<dt><a href="">售后服务</a></dt>
-            <dd><a href="">购物流程</a></dd>
-            <dd><a href="">会员介绍</a></dd>
-            <dd><a href="">生活旅行/团购</a></dd>
-            <dd><a href="">常见问题</a></dd>
-            <dd><a href="">大家电</a></dd>
-        </dl>
-        <dl class="last">
-        	<dt><a href="">特色服务</a></dt>
-            <dd><a href="">购物流程</a></dd>
-            <dd><a href="">会员介绍</a></dd>
-            <dd><a href="">生活旅行/团购</a></dd>
-            <dd><a href="">常见问题</a></dd>
-            <dd><a href="">大家电</a></dd>
-        </dl>
-        <div class="ditu">
-        	<h5>京东自营覆盖区县</h5>
-            <p>京东已向全国2654个县提供自营配送服务，支持货到付款、POS机刷卡和售后上门服务</p>
-            <span><a href="">查看详情 ></a></span>
+	<div class="up">
+    	<ul>
+        	<li>
+            	<dl>
+                	<dt>购物指南</dt>
+                	<dd><a href="#">购物流程</a></dd>
+                	<dd><a href="#">会员介绍</a></dd>
+                	<dd><a href="#">生活旅行/团购</a></dd>
+                	<dd><a href="#">常见问题</a></dd>
+                	<dd><a href="#">大家电</a></dd>
+                	<dd><a href="#">联系客服</a></dd>
+                </dl>
+            </li>
+        	<li>
+            	<dl>
+                	<dt>配送方式</dt>
+                	<dd><a href="#">上门自提</a></dd>
+                	<dd><a href="#">211限时达</a></dd>
+                	<dd><a href="#">配送服务查询</a></dd>
+                	<dd><a href="#">配送费收取标准</a></dd>
+                	<dd><a href="#">海外配送</a></dd>
+                </dl>
+            </li>
+        	<li>
+            	<dl>
+                	<dt>支付方式</dt>
+                	<dd><a href="#">货到付款</a></dd>
+                	<dd><a href="#">在线支付</a></dd>
+                	<dd><a href="#">分期付款</a></dd>
+                	<dd><a href="#">邮局汇款</a></dd>
+                	<dd><a href="#">公司转账</a></dd>
+                </dl>
+            </li>
+        	<li>
+            	<dl>
+                	<dt>售后服务</dt>
+                	<dd><a href="#">售后政策</a></dd>
+                	<dd><a href="#">价格保护</a></dd>
+                	<dd><a href="#">退款说明</a></dd>
+                	<dd><a href="#">返修/退换货</a></dd>
+                	<dd><a href="#">取消订单</a></dd>
+                </dl>
+            </li>
+        	<li class="last">
+            	<dl>
+                	<dt>特色服务</dt>
+                	<dd><a href="#">夺宝岛</a></dd>
+                	<dd><a href="#">DIY装机</a></dd>
+                	<dd><a href="#">延保服务</a></dd>
+                	<dd><a href="#">京东E卡</a></dd>
+                	<dd><a href="#">京东通信</a></dd>
+                	<dd><a href="#">京东JD+</a></dd>
+                </dl>
+            </li>
+        </ul>
+        <div class="area">
+			<h5>京东自营覆盖区县</h5>
+            <p>京东已向全国2630个区县提供自营配送服务，支持货到付款、POS机刷卡和售后上门服务。</p>
+            <span><a href="#">查看详情 ></a></span>
         </div>
     </div>
-    <div class="xia">
-    	<ul class="fot_nav">
-        	<li><a href="">关于我们</a></li>
-            <li><a href="">联系我们</a></li>
-            <li><a href="">联系客服</a></li>
-            <li><a href="">商家入驻</a></li>
-            <li><a href="">营销中心</a></li>
-            <li><a href="">手机京东</a></li>
-            <li><a href="">友情链接</a></li>
-            <li><a href="">销售联盟</a></li>
-            <li><a href="">京东社区</a></li>
-            <li><a href="">京东公益</a></li>
-            <li><a href="">English Site</a></li>
-            <li class="last"><a href="">Contact Us</a></li>
-        </ul>
-        <p><a href="">京公网安备 11000002000088号</a>  |  京ICP证070359号  | <a href=""> 互联网药品信息服务资格证编号(京)-经营性-2014-0008</a>  |  新出发京零 字第大120007号<br/>
-互联网出版许可证编号新出网证(京)字150号  | <a href=""> 出版物经营许可证</a>  |  <a href="">网络文化经营许可证京网文[2014]2148-348号</a>  |  违法和不良信息举报电话：4006561155<br/>
-Copyright © 2004 - 2016  京东JD.com 版权所有  |  消费者维权热线：4006067733<br/>
-京东旗下网站：京东钱包</p>       
+    <div class="down">
+    	<div class="links">
+        	<ul>
+            	<li><a href="#">关于我们</a><span>|</span></li>
+            	<li><a href="#">联系我们</a><span>|</span></li>
+            	<li><a href="#">商家入驻</a><span>|</span></li>
+            	<li><a href="#">营销中心</a><span>|</span></li>
+            	<li><a href="#">手机京东</a><span>|</span></li>
+            	<li><a href="#">友情链接</a><span>|</span></li>
+            	<li><a href="#">销售联盟</a><span>|</span></li>
+            	<li><a href="#">京东社区</a><span>|</span></li>
+            	<li><a href="#">京东公益</a><span>|</span></li>
+            	<li><a href="#">English Site</a><span>|</span></li>
+            	<li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    	<div class="cr">
+        	<ul class="tp clear">
+            	<li><a href="#"><img src="images/56a0a994Nf1b662dc.png">京公网安备 11000002000088号</a><span>|</span></li>
+            	<li>京ICP证070359号<span>|</span></li>
+            	<li><a href="#">互联网药品信息服务资格证编号(京)-经营性-2014-0008</a><span>|</span></li>
+            	<li>新出发京零 字第大120007号</li>
+            </ul>
+            <ul class="tp clear">
+            	<li>互联网出版许可证编号新出网证(京)字150号<span>|</span></li>
+            	<li><a href="#">出版物经营许可证</a><span>|</span></li>
+            	<li><a href="#">网络文化经营许可证京网文[2014]2148-348号</a><span>|</span></li>
+            	<li>违法和不良信息举报电话：4006561155</li>
+            </ul>
+            <ul class="tp clear">
+            	<li>Copyright © 2004 - 2016  京东JD.com 版权所有<span>|</span></li>
+            	<li>消费者维权热线：4006067733</li>
+            </ul>
+            <div class="web">
+            	京东旗下网站：<a href="#">京东钱包</a>
+            </div>
+            <ul class="bot clear">
+            	<li><a href="#"><img src="images/54b8871eNa9a7067e.png"></a></li>
+            	<li><a href="#"><img src="images/54b8872dNe37a9860.png"></a></li>
+            	<li><a href="#"><img src="images/56a89b8fNfbaade9a.jpg"></a></li>
+            	<li><a href="#"><img src="images/54b8875fNad1e0c4c.png"></a></li>
+            	<li><a href="#"><img src="images/5698dc03N23f2e3b8.jpg"></a></li>
+            	<li><a href="#"><img src="images/5698dc16Nb2ab99df.jpg"></a></li>
+            </ul>
+        </div>
     </div>
 </div>
-<div class="ending">
-        <ul>
-            <li><a href="#"><img src="images/54b8871eNa9a7067e.png"></a></li>
-            <li><a href="#"><img src="images/ending_03.jpg"></a></li>
-            <li><a href="#"><img src="images/56a89b8fNfbaade9a.jpg"></a></li>
-            <li><a href="#"><img src="images/54b8875fNad1e0c4c.png"></a></li>
-            <li><a href="#"><img src="images/5698dc03N23f2e3b8.jpg"></a></li>
-            <li><a href="#"><img src="images/5698dc16Nb2ab99df.jpg"></a></li>
-        </ul>
+<div class="side_r">
+	<div class="line"></div>
 </div>
+<div class="sidetop">
+    <ul class="bar">
+        <li>
+        	<a class="yi" href="#"></a>
+        	<div class="hide"><a href="#">京东会员</a></div>
+        </li>
+        <li>
+        	<a class="er" href="#"></a>
+        	<div class="hide"><a href="#">购物车</a></div>
+        </li>
+        <li>
+        	<a class="san" href="#"></a>
+        	<div class="hide"><a href="#">我的关注</a></div>
+        </li>
+        <li>
+        	<a class="si" href="#"></a>
+        	<div class="hide"><a href="#">我的足迹</a></div>
+        </li>
+        <li>
+        	<a class="wu" href="#"></a>
+        	<div class="hide"><a href="#">我的消息</a></div>
+        </li>
+        <li>
+        	<a class="liu" href="#"></a>
+        	<div class="hide"><a href="#">资讯JIMI</a></div>
+        </li>
+    </ul>
+</div>
+<div class="sidebot">
+    <ul class="bar">
+        <li>
+        	<a class="qi" href="#"></a>
+        	<div class="hide down"><a href="#">顶部</a></div>
+        </li>
+        <li>
+        	<a class="ba" href="#"></a>
+        	<div class="hide down"><a href="#">反馈</a></div>
+        </li>
+    </ul>
+</div>
+
 </body>
 </html>
